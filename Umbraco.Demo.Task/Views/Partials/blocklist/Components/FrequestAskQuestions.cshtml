@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (FrequestAskQuestions)Model.Content;
+}
+
+<h3 class="title-5">@content.FaqTitle</h3>
+<div class="p">
+    @content.FaqDescriptions
+    
+    <ul class="@content.FaqAnswerDisplayType">
+        @foreach (var answer in content.FaqAnswers)
+        {
+            <li>@answer</li>
+        }
+    </ul>
+</div>

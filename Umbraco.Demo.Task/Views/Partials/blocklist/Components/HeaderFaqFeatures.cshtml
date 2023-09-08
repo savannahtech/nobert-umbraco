@@ -1,0 +1,10 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (HeaderFaqFeatures)Model.Content;
+    //var settings = (ContentModels.HeaderFaqFeatures)Model.Settings;
+}
+
+
+<h3 class="title-5">@content.Title</h3>
+<p>@content.Descriptions</p>

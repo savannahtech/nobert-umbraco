@@ -1,0 +1,204 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="he">
+<head>
+
+    
+    
+    @await Html.PartialAsync("~/Views/Partials/Master/metaData.cshtml")
+    <!-- Link to stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/media/css/global.css" />
+    <link rel="stylesheet" type="text/css" href="/media/css/style.css" />
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/media/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/media/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/media/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/media/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/media/favicons/safari-pinned-tab.svg" color="#003a70">
+    <link rel="shortcut icon" href="/media/favicons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="רפאל">
+    <meta name="application-name" content="רפאל">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="/media/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body class="loaded">
+
+      <!-- Skip content -->        
+        <div class="skiptocontent" id="skiptocontent">
+            <a class="access open_nav" tabindex="1" accesskey="n" href="javascript:;">דלג לתפריט הראשי (מקש קיצור n)</a>
+            <a class="access" tabindex="2" accesskey="s" href="#maincontent">דלג לתוכן הדף (מקש קיצור s)</a>
+            <a class="access" tabindex="3" accesskey="2" href="#mainfooter">דלג לתחתית הדף (מקש קיצור 2)</a>
+        </div>
+
+
+@await Html.PartialAsync("~/Views/Partials/Master/navigation.cshtml")
+
+  <!-- Sticky elements -->
+    <div class="sticky_elem" id="sticky_elem">
+        <ul class="share_sticky">
+            <li><a href="#" aria-label="WhatsApp"><span class="icon icon-whatsapp"></span></a></li>
+            <li><a href="#" aria-label="Facebook"><span class="icon icon-facebook_square"></span></a></li>
+            <li class="li-print"><a href="window.print();" aria-label="הדפס מאמר"><span class="icon icon-print"></span></a></li>
+        </ul>
+    </div>
+
+
+<!-- Container -->
+    <div class="container-scroll" id="container-scroll">
+        <main class="container" id="container" role="main">
+
+            <!-- Page top -->
+            <div id="page-top"></div>
+            
+     
+            @RenderBody()
+            
+          
+            <!-- Footer -->
+            @await Html.PartialAsync("~/Views/Partials/Master/footer.cshtml")
+          
+            
+        </main>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">          
+              
+        <!-- Popup wcag -->
+        <div class="popup_wcag content_popup box">            
+            <a href="javascript:;" title="סגור" class="close_btn close close_lightbox" role="button"><span class="icon icon-close"></span></a>
+            <div class="scrollbar-inner">
+                <div class="inner">
+                    <div class="text">
+                        <h3 class="title_section">הצהרת נגישות</h3>
+                        <div class="text">
+                        <p><strong>גולש/ת יקר/ה!</strong></p>
+                        <p>ברוך הבא לאתר התוכן של רפאל בע"מ (להלן <strong>"החברה" </strong>או<strong> "רפאל"</strong>). אתר זה מיועד להנגיש בפניך את שירותי, אתרי ותכני החברה השונים, ולרכז עבורך את כל המידע הדרוש לשם העשרת תרבות האוכל, הבישול והפנאי, אספקת מוצרים ומתכונים, ומגוון טיפים והמלצות בנוגע לבישול, אפיה ותזונה.</p>
+                        <p>** מסמך זה מנוסח בלשון זכר מטעמי נוחות בלבד אך מתייחס לגברים ונשים כאחד. עמכן הסליחה.</p>
+                        <p>&nbsp;</p>
+                        <h3>שימושך באתר והסכמה לתנאיו ולתקנונים קשורים/נלווים</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popup invitation -->
+        <div class="popup_invitation popup_global box">            
+            <button type="button" aria-label="סגור חלונית" class="close_btn close close_lightbox btn_arrow"><span class="icon icon-arrow_left"></span></button>
+            <div class="image"><div class="bg"><div class="cover" style="background-image:url('media/images/pictures/79.jpg');"></div></div></div>
+            <div class="scrollbar-inner">
+                <form class="lead_section inner side_section">
+                    <div class="type">זימון תור <span class="info">ל<span class="doctor">ד״ר רוגובסקי רותם</span> לבדיקה / טיפול <span class="treat">החלפת ברך</span></span></div>
+                    <div class="in relative">
+                        <div class="step_one">
+                            <h1 class="title_section title-2">קביעת תור ל:</h1>
+                            <div class="form_ui font_m clear">
+                                <div class="input_c" id="select_doctor">
+                                    <select class="cselect" data-search="true" data-placeholder="בחירת רופא">
+                                        <option value="">בחירת רופא</option>
+                                        <option value="כירורג 1">כירורג 1</option>
+                                        <option value="כירורג 2">כירורג 2</option>
+                                        <option value="כירורג 3">כירורג 3</option>
+                                        <option value="כירורג 4">כירורג 4</option>
+                                        <option value="כירורג 5">כירורג 5</option>
+                                    </select>
+                                </div>
+                                <div class="input_c" id="select_treat">
+                                    <select class="cselect" data-search="true" data-placeholder="בחירת סוג בדיקה / טיפול">
+                                        <option value="">בחירת סוג בדיקה / טיפול</option>
+                                        <option value="החלפת מפרק ברך 1">החלפת מפרק ברך 1</option>
+                                        <option value="החלפת מפרק ברך 2">החלפת מפרק ברך 2</option>
+                                        <option value="החלפת מפרק ברך 3">החלפת מפרק ברך 3</option>
+                                        <option value="החלפת מפרק ברך 4">החלפת מפרק ברך 4</option>
+                                        <option value="החלפת מפרק ברך 5">החלפת מפרק ברך 5</option>
+                                        <option value="החלפת מפרק ברך 6">החלפת מפרק ברך 6</option>
+                                        <option value="החלפת מפרק ברך 7">החלפת מפרק ברך 7</option>
+                                    </select>
+                                </div>
+                                <div class="sep"></div>
+                                <div class="input_checkbox input_c">&nbsp;</div>
+                                <div class="input_submit input_c clear">
+                                    <button type="button" class="btn btn_next" disabled><span>המשך</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step_two">
+                            <h1 class="title_section title-2">הפרטים שלך:</h1>
+                            <div class="form_ui font_m clear">
+                                <div class="input_c must">
+                                    <div class="input">
+                                        <input type="text" id="input_9" class="input_text" required />
+                                        <label for="input_9" class="label">שם פרטי</label>
+                                    </div>
+                                </div>
+                                <div class="input_c must">
+                                    <div class="input">
+                                        <input type="text" id="input_10" class="input_text" required />
+                                        <label for="input_10" class="label">שם משפחה</label>
+                                    </div>
+                                </div>
+                                <div class="input_c must">
+                                    <div class="input">
+                                        <input type="text" id="input_16" class="input_text" required />
+                                        <label for="input_16" class="label">מספר ת.ז.</label>
+                                    </div>
+                                </div>
+                                <div class="input_c must">
+                                    <div class="input">
+                                        <input type="text" id="input_11" class="input_text" required />
+                                        <label for="input_11" class="label">טלפון</label>
+                                    </div>
+                                </div>
+                                <div class="input_c must">
+                                    <div class="input">
+                                        <input type="text" id="input_12" class="input_text" required />
+                                        <label for="input_12" class="label">דוא"ל</label>
+                                    </div>
+                                </div>
+                                <div class="input_c">
+                                    <div class="input input_textarea">
+                                        <textarea id="input_13" class="input_text" rows="1"></textarea>
+                                        <label for="input_13" class="label">תרצו להוסיף משהו?</label>
+                                    </div>
+                                </div>
+                                <div class="sep"></div>
+                                <div class="input_checkbox input_c">&nbsp;</div>
+                                <div class="input_submit input_c clear">
+                                    <button type="submit" class="btn btn_submit"><span>שליחת פניה לזימון תור</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="contactsubmit_section hide">
+                <div class="row sm-fadein">
+                    <span class="icon icon-check_2"></span>
+                    <h2 class="title_section title-5">הפנייה לזימון תור נשלחה בהצלחה</h2>
+                    <div class="desc">אנו נחזור אליכם בהקדם לתיאום התור</div>
+                    <a href="javascript:;" class="btn close_lightbox"><span>תודה</span></a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- Scripts -->
+    <script> var includeScriptsUrlPath = '/media/js/plugins/'; </script>
+    <script src="/media/js/plugins/plugins.min.js"></script>
+    <script src="/media/js/plugins/mixel.plugins.js"></script>
+    <script src="/media/js/global.js"></script>
+    
+</body>
+</html>
+
+

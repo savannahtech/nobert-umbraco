@@ -1,0 +1,19 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (PostFeatures)Model.Content;
+    //var settings = (ContentModels.FrequestAskQuestions)Model.Settings;
+}
+ 
+  <div class="item carousel-cell">
+                                                     <a href="#" class="inner" aria-label="עבור לרופא">
+                                                         <div class="in">
+                                                             <div class="bg"><div class="cover" style="background-image: url('@content.PostThumbnail.Url()');"></div></div>
+                                                             <div class="bottom">
+                                                                 <h3 class="title title-5">@content.PostCaption</h3>
+                                                                 <div class="desc">@content.PostDescription</div>
+                                                             </div>
+                                                         </div>
+                                                     </a>
+                                                     </div>
+             
